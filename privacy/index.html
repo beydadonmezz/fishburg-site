@@ -7,7 +7,7 @@
 <meta name="referrer" content="no-referrer">
 <meta name="color-scheme" content="light dark">
 <title>Privacy Policy · Fishburg: Aquarium</title>
-<meta name="description" content="Privacy Policy for Fishburg: Aquarium. No account, no developer server, local save only, ads by Google AdMob, purchases and Game Center by Apple.">
+<meta name="description" content="Privacy Policy for Fishburg: Aquarium. Your save stays on your device, the friends feature uses an anonymous account, ads by Google AdMob, purchases and Game Center by Apple.">
 <link rel="canonical" href="https://beydadonmezz.github.io/fishburg-site/privacy/">
 <link rel="alternate" hreflang="en" href="https://beydadonmezz.github.io/fishburg-site/privacy/">
 <link rel="alternate" hreflang="tr" href="https://beydadonmezz.github.io/fishburg-site/tr/privacy/">
@@ -30,13 +30,14 @@
 </header>
 <main id="main" class="wrap">
 <h1>Privacy Policy</h1>
-<p class="meta">Fishburg: Aquarium · Effective date: <time datetime="2026-10-12">12 October 2026</time></p>
+<p class="meta">Fishburg: Aquarium · Effective date: <time datetime="2026-10-13">13 October 2026</time></p>
 
 <div class="card summary">
   <h2>The short version</h2>
   <ul>
-    <li>Fishburg has <strong>no account</strong> and no sign-up. We (the developer) run <strong>no server</strong>, and your game data is never sent to us.</li>
-    <li>Your save game is stored <strong>only on your device</strong>. Deleting the app deletes it.</li>
+    <li>Fishburg has <strong>no sign-up</strong>: no email, no password, no name. Your save game is stored <strong>on your device</strong>, and deleting the app deletes it.</li>
+    <li>For the <strong>friends feature</strong>, the game creates an anonymous account with a random player ID and a generated display name when it first starts. More is stored on our server (your level, a copy of how your tanks look, friends, likes, blocks and reports) only after you join Friends and accept its rules.</li>
+    <li>You can <strong>delete the social account</strong> at any time in the game's Settings. We don't use this data for ads and we don't sell it.</li>
     <li>Ads are provided by <strong>Google AdMob</strong>. Google collects some device and usage data to show ads, measure them and prevent fraud. You decide whether ads may be personalized.</li>
     <li>Purchases and Game Center are handled by <strong>Apple</strong>. We never see your payment details.</li>
     <li>The game works fully whatever you choose in any privacy prompt.</li>
@@ -49,6 +50,7 @@
   <ol>
     <li><a href="#who">Who we are</a></li>
     <li><a href="#on-device">What stays on your device</a></li>
+    <li><a href="#friends">Friends and your social account</a></li>
     <li><a href="#ads">Ads by Google AdMob</a></li>
     <li><a href="#choices">Your privacy choices</a></li>
     <li><a href="#purchases">In-app purchases</a></li>
@@ -66,18 +68,82 @@
 
 <h2 id="who">1. Who we are</h2>
 <p>Fishburg is made by <strong>BEYDANUR DONMEZ (Beydanur Dönmez)</strong> ("we", "us"). We are responsible (the "data controller") for how the Fishburg app handles personal data. You can reach us at <a class="email" href="mailto:fishburg.sandbox@outlook.com">fishburg.sandbox@outlook.com</a>.</p>
-<p>Google and Apple provide some services inside the app (ads, purchases, Game Center). They handle the data they collect under their own privacy policies, which are linked below.</p>
+<p>Google and Apple provide some services inside the app (ads, purchases, Game Center). They handle the data they collect under their own privacy policies, which are linked below. Supabase hosts the friends feature for us and handles that data only on our instructions.</p>
 
 <h2 id="on-device">2. What stays on your device</h2>
-<p>Fishburg is an offline game. The following is stored in the app's private storage on your iPhone or iPad and is <strong>never sent to us</strong>:</p>
+<p>You can play Fishburg without an internet connection. The following is stored in the app's private storage on your iPhone or iPad. Apart from the copy of your tanks and your level described under <a href="#friends">Friends and your social account</a>, it is <strong>never sent to us</strong>:</p>
 <ul>
   <li>your tanks, fish, decorations, coins, gems, level, awards, daily tasks and calendar progress (your save game);</li>
   <li>your settings, such as language, sound, music and notifications;</li>
   <li>which purchases you have made (for example, Remove Ads or the Starter Pack), so the game can apply them.</li>
 </ul>
-<p>We do not use our own analytics, crash reporting or tracking tools, and we have no copy of your save.</p>
+<p>We do not use our own analytics, crash reporting or tracking tools. We have no copy of your save: your coins, gems, purchases, awards and the names of your fish and tanks never leave your device.</p>
 
-<h2 id="ads">3. Ads by Google AdMob</h2>
+<h2 id="friends">3. Friends and your social account</h2>
+<p>Fishburg has a friends feature. You add other players with a player ID, look at their tanks, leave a like and clean their glass. It runs on a server that we rent from Supabase (see <a href="#friends-provider">Who stores it</a>). This is the only part of Fishburg where we keep data about you.</p>
+
+<h3 id="friends-first-launch">Created when the game first starts</h3>
+<p>The first time Fishburg starts with an internet connection, it creates an <strong>anonymous social account</strong> for the game on your device. You give no email address, no password, no name and no Apple Account, and we do not learn who you are. At that point the server stores only:</p>
+<ul>
+  <li>a random account ID and the time the account was created;</li>
+  <li>a public <strong>player ID</strong> in the form FB-XXXX-XXXX;</li>
+  <li>a <strong>display name</strong> that the game generates for you;</li>
+  <li>your app language, so that text sent to you can be in your language.</li>
+</ul>
+<p>Nothing else is sent until you join Friends. Until then no other player can find you, even with your player ID.</p>
+
+<h3 id="friends-data">Stored after you join Friends</h3>
+<p>The first time you use Friends, the game shows the rules and asks you to accept them. If you don't accept, nothing below is sent. After you accept, the server also stores:</p>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr><th scope="col">Data</th><th scope="col">What it contains</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Display name</td><td>The generated name, or the one you type instead (3 to 16 characters, checked by a filter for offensive words)</td></tr>
+      <tr><td>Level</td><td>Your player level</td></tr>
+      <tr><td>A copy of your tanks</td><td>Tank size, background, sand, decorations and where they stand, your fish (species, colour, growth stage and whether they are hungry), how dirty the glass is, and the time of the upload. The copy is read-only and is uploaded when the game saves, at most about once a minute. <strong>The names you gave your fish and your tanks are not uploaded.</strong></td></tr>
+      <tr><td>Friends</td><td>Friend requests you sent or received, and your friends list</td></tr>
+      <tr><td>Likes and glass cleanings</td><td>The ones you gave and the ones you received: who, whose tank and which day</td></tr>
+      <tr><td>Blocks</td><td>The players you blocked</td></tr>
+      <tr><td>Reports</td><td>Reports you file about another player: who filed it, the reported player with their player ID and display name as they were at that moment, the reason (offensive name, harassment, cheating, spam or other), an optional note of up to 500 characters, the date, and our review status</td></tr>
+      <tr><td>Inbox</td><td>The last 100 events for you: a friend request arrived or was accepted, someone liked your tank or cleaned your glass</td></tr>
+      <tr><td>Daily counters</td><td>How many friend requests, likes, rewarded glass cleanings, reports and name changes you made today, so that the server can apply its daily limits. A day is counted in UTC, and the counters are deleted after 7 days.</td></tr>
+      <tr><td>Rules accepted</td><td>The date you accepted the Friends rules</td></tr>
+      <tr><td>Push notification token</td><td>Only if you allow notifications and the feature is enabled: then up to 5 device tokens per account. It is not enabled in the current version, so no token is collected today.</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>Your save game itself stays on your device and remains the only real copy of your game. The tank copy on the server cannot be used to restore a lost save.</p>
+<p>A friend can change one thing in your game: when a friend cleans your glass, the server notes when it happened, and your game then wipes the glass clean on your device. The friend gets a small coin reward in their own game. You get no coins for it, and a friend can change nothing else.</p>
+
+<h3 id="friends-visibility">Who can see it</h3>
+<ul>
+  <li>Your <strong>display name, player ID and level</strong> can be seen by anyone who enters your player ID in the game.</li>
+  <li>The <strong>copy of your tanks</strong> can be seen only by friends you have accepted.</li>
+  <li>Players you have <strong>blocked</strong> see nothing of yours.</li>
+  <li>Reports are seen only by us.</li>
+</ul>
+<p>There is no chat and there are no messages. The only text that other players can read from you is your display name.</p>
+
+<h3 id="friends-use">What we use it for</h3>
+<p>We use this data only to run the friends feature and to keep it safe (for example, to review reports and remove offensive names). We do not use it for advertising or tracking, we do not sell it, and we share it with nobody except the hosting provider below.</p>
+
+<h3 id="friends-provider">Who stores it</h3>
+<p>The data is stored by <strong>Supabase</strong> (Supabase, Inc.), which hosts the database and the anonymous sign-in for us and acts only on our instructions (as our "data processor"). The database is in Supabase's Central EU region in <strong>Frankfurt, Germany</strong> (Amazon Web Services region eu-central-1). Like any web server, Supabase's servers also see your IP address in ordinary request logs when the game talks to them, and the sign-in service uses it to limit how many new accounts can be created from one address in an hour. See the <a href="https://supabase.com/privacy">Supabase Privacy Policy</a> and the <a href="https://supabase.com/legal/customer-resources/data-processing-addendum">Supabase Data Processing Addendum</a>.</p>
+
+<h3 id="friends-delete">Deleting your social account</h3>
+<p>In the game, open <span class="path">Settings → Delete social account</span>. This removes the account from the server at once, together with everything listed above. Your game on the device is not touched. Two things to know:</p>
+<ul>
+  <li><strong>Reports.</strong> Reports are the one thing that outlives the account, for safety review. A report that another player filed about you loses its link to your account and keeps only your player ID and display name as plain text. A report that you filed loses its link to you. We review reports, and every report is deleted 12 months after it was filed.</li>
+  <li><strong>No new account.</strong> After deletion the game stays signed out of Friends, and no new account is created. If you later open Friends and choose to join again, you get a brand-new anonymous account with a new player ID.</li>
+</ul>
+<p>If you can no longer open the app, email <a class="email" href="mailto:fishburg.sandbox@outlook.com?subject=Delete%20my%20Fishburg%20social%20account">fishburg.sandbox@outlook.com</a> with your player ID and we will delete the account for you.</p>
+
+<h3 id="friends-moderation">Reports and moderation</h3>
+<p>You can report a player whose player ID you have (a friend, or someone who sent you a friend request) from inside the game, once per player per day, and you can block players. We review reports ourselves. We remove offensive names and delete the accounts of abusive players, and we aim to act within 24 hours of a report. The rules are in the <a href="../terms/#friends">Terms of Use</a>.</p>
+
+<h2 id="ads">4. Ads by Google AdMob</h2>
 <p>Fishburg is free to play and is funded by ads from Google AdMob. You see <strong>rewarded ads</strong> only when you choose to watch one (for example, to revive a fish or to collect the Free Gift), and occasionally a full-screen ad when a level-up message closes. There are no banner ads. We have limited ads in Fishburg to Google's <strong>PG</strong> (parental guidance) content rating or below.</p>
 <p>To show ads, Google's Mobile Ads SDK in the app collects the following, according to <a href="https://developers.google.com/admob/ios/privacy/data-disclosure">Google's own disclosure</a>:</p>
 <div class="table-scroll">
@@ -97,7 +163,7 @@
 <p>Google's consent tool (the User Messaging Platform) also uses your approximate location and basic device data to decide which privacy messages apply where you live, and it stores your choices on your device.</p>
 <p>This data goes directly to Google, not to us. We only see anonymous, combined reports (for example, how many ads were shown). We only work with partners that protect user data at least as well as this policy describes. Google uses the data as described in the <a href="https://policies.google.com/privacy">Google Privacy Policy</a> and in <a href="https://policies.google.com/technologies/partner-sites">How Google uses information from sites or apps that use its services</a>.</p>
 
-<h2 id="choices">4. Your privacy choices</h2>
+<h2 id="choices">5. Your privacy choices</h2>
 <p>Before any ad loads, Google's consent flow shows the privacy messages that apply to you:</p>
 <ul>
   <li><strong>Consent form (EEA, UK and Switzerland).</strong> You can agree to or refuse personalized ads and the use of your device's storage and identifiers. The form has a "Do not consent" button. If you don't give consent, ads are <strong>not personalized</strong>: Google shows non-personalized or "limited" ads that don't use your past activity.</li>
@@ -111,46 +177,49 @@
 </ul>
 <p>Saying no never limits the game. You can still play everything and still choose to watch rewarded ads.</p>
 
-<h2 id="purchases">5. In-app purchases</h2>
+<h2 id="purchases">6. In-app purchases</h2>
 <p>Purchases (gem packs, coin packs, the Starter Pack and Remove Ads) are processed entirely by Apple through your Apple Account. We never receive your name, email, card or other payment details. Apple only tells the app that a purchase succeeded, with a transaction number, so the game can apply it on your device. Apple handles this data under the <a href="https://www.apple.com/legal/privacy/">Apple Privacy Policy</a>. Refunds are handled by Apple. See the <a href="../terms/#purchases">Terms of Use</a> for what each purchase includes.</p>
 
-<h2 id="game-center">6. Game Center</h2>
+<h2 id="game-center">7. Game Center</h2>
 <p>If you are signed in to Apple's Game Center, Fishburg sends your <strong>total XP</strong> to a leaderboard and reports <strong>achievements</strong> (one for each award tier you reach). Your Game Center nickname and score can be seen by other players on the leaderboard, according to your Game Center settings. Apple processes this data under <a href="https://www.apple.com/legal/privacy/data/en/game-center/">Game Center &amp; Privacy</a>. We don't receive or store your Game Center data outside of what Apple shows on the leaderboard.</p>
 <p>Game Center is optional and the game works fully without it. You can sign out at any time in <span class="path">iOS Settings → Game Center</span>.</p>
 
-<h2 id="notifications">7. Notifications</h2>
-<p>Fishburg can remind you when a fish is hungry or about to starve, when an egg has hatched, when the glass needs cleaning and when your Free Gift is ready. These are <strong>local notifications</strong>: they are scheduled on your device by the game itself, from your save. No push server is involved and nothing is sent to us. You get at most three a day and none between 22:00 and 09:00. The game asks for permission at the end of the tutorial (and at most once more later, if a fish has starved), and you can turn reminders off, all of them or one kind at a time, in the game settings or in <span class="path">iOS Settings → Notifications → Fishburg</span>.</p>
+<h2 id="notifications">8. Notifications</h2>
+<p>Fishburg can remind you when a fish is hungry or about to starve, when an egg has hatched, when the glass needs cleaning and when your Free Gift is ready. These are <strong>local notifications</strong>: they are scheduled on your device by the game itself, from your save, and nothing is sent to us for them. The current version uses no push server. If a later version turns on notifications about friends (for example, that someone liked your tank) and you allow notifications, a push notification token for your device is stored with your social account, and those notifications are delivered through Apple's push service. You get at most three a day and none between 22:00 and 09:00. The game asks for permission at the end of the tutorial (and at most once more later, if a fish has starved), and you can turn reminders off, all of them or one kind at a time, in the game settings or in <span class="path">iOS Settings → Notifications → Fishburg</span>.</p>
 
-<h2 id="children">8. Children and age rating</h2>
-<p>Fishburg is rated <strong>9+</strong> on the App Store and is not in the Kids category. It is a general-audience game, <strong>not directed at children under 13</strong>, and we do not knowingly collect personal data from children. We collect no personal data ourselves. Ads are limited to Google's PG content rating, they are not personalized when consent is not given, and the tracking identifier is only used if the user allows it. If you are a parent and have a question, please contact us.</p>
+<h2 id="children">9. Children and age rating</h2>
+<p>Fishburg is rated <strong>9+</strong> on the App Store and is not in the Kids category. It is a general-audience game, <strong>not directed at children under 13</strong>, and we do not ask for anyone's age. The friends feature has no chat, no messages and no photos: the only text players can see from each other is a display name, which passes a filter for offensive words, and the social account holds no name, email address or other contact details. If you are a parent and want your child's social account removed, use <span class="path">Settings → Delete social account</span> in the game or email us with the player ID. Ads are limited to Google's PG content rating, they are not personalized when consent is not given, and the tracking identifier is only used if the user allows it. If you are a parent and have a question, please contact us.</p>
 
-<h2 id="retention">9. Keeping and deleting data</h2>
+<h2 id="retention">10. Keeping and deleting data</h2>
 <ul>
   <li><strong>Your save game</strong> stays on your device until you delete the app. Deleting Fishburg removes the save and your settings. A copy may remain in your own iCloud or computer backups until those backups are replaced.</li>
-  <li><strong>We keep nothing</strong> about you on any server, so there is nothing for us to delete. We keep emails you send us only as long as we need to answer them, and at most two years.</li>
+  <li><strong>Your social account</strong> and the friends data are kept on the server until you delete the account (<span class="path">Settings → Delete social account</span>) or until we close the friends feature. Deletion takes effect at once. Reports are deleted 12 months after they were filed; if an account in a report is deleted earlier, the report loses its link to that account, as described under <a href="#friends-delete">Deleting your social account</a>. The inbox keeps only the last 100 events. Supabase keeps its request logs (which include IP addresses) for a limited time under its own rules.</li>
+  <li><strong>Emails</strong> you send us are kept only as long as we need to answer them, and at most two years.</li>
   <li><strong>Google</strong> keeps ad data for the periods described in <a href="https://policies.google.com/technologies/retention">How Google retains data</a>. You can withdraw ad consent at any time (see <a href="#choices">Your privacy choices</a>).</li>
   <li><strong>Apple</strong> keeps purchase and Game Center data under its own policy.</li>
 </ul>
 
-<h2 id="rights">10. Your rights</h2>
-<p>Depending on where you live, you have rights over your personal data. Because Fishburg sends nothing to us, most requests about ad data are best handled by Google directly, but we're happy to help: just email us.</p>
+<h2 id="rights">11. Your rights</h2>
+<p>Depending on where you live, you have rights over your personal data. For the friends data you can do most things yourself: change your display name in the game, and delete the whole social account in <span class="path">Settings → Delete social account</span>. For a copy of the data, or for anything else, email us and include your player ID (we have no other way to find your account). Requests about ad data are best handled by Google directly, but we're happy to help.</p>
 <h3>Turkey (KVKK)</h3>
-<p>Under Law No. 6698 on the Protection of Personal Data, you can learn whether your data is processed, ask for information about it and its purpose, learn which third parties it is transferred to in Turkey or abroad, ask for correction or deletion, object to results based solely on automated processing, and claim compensation for unlawful processing. You can apply to us first and then complain to the Personal Data Protection Board. A <a href="../tr/privacy/">Turkish version of this policy</a> is available.</p>
+<p>Under Law No. 6698 on the Protection of Personal Data, you can learn whether your data is processed, ask for information about it and its purpose, learn which third parties it is transferred to in Turkey or abroad, ask for correction or deletion, object to results based solely on automated processing, and claim compensation for unlawful processing. We process the friends data because it is needed to provide a feature you asked for and, for the anonymous account and for moderation, on the basis of our legitimate interest in running the feature safely. You can apply to us first and then complain to the Personal Data Protection Board. A <a href="../tr/privacy/">Turkish version of this policy</a> is available.</p>
 <h3>EEA and UK (GDPR)</h3>
-<p>You can ask to access, correct or delete your data, restrict or object to its use, and receive it in a portable format. Where we rely on consent (for example, for personalized ads), you can withdraw it at any time without affecting earlier use. Otherwise ads rely on our legitimate interest in funding a free game, limited to non-personalized ads, fraud prevention and security. You can also complain to your local data protection authority.</p>
+<p>You can ask to access, correct or delete your data, restrict or object to its use, and receive it in a portable format. Where we rely on consent (for example, for personalized ads), you can withdraw it at any time without affecting earlier use. Otherwise ads rely on our legitimate interest in funding a free game, limited to non-personalized ads, fraud prevention and security. The friends data is processed to provide the feature you joined (performance of a contract); creating the anonymous account and reviewing reports rely on our legitimate interest in running the feature and keeping it safe. You can also complain to your local data protection authority.</p>
 <h3>California (CCPA/CPRA)</h3>
-<p>We do not sell personal information for money. Where the use of your advertising identifier for personalized ads counts as "sharing" under California law, you can opt out by choosing <strong>Ask App Not to Track</strong> and, where the game offers it, in <span class="path">Settings → Privacy options</span>. You also have the right to know about and delete personal information, and you will not be treated differently for using your rights.</p>
+<p>We do not sell personal information for money, and we neither sell nor share the friends data. Where the use of your advertising identifier for personalized ads counts as "sharing" under California law, you can opt out by choosing <strong>Ask App Not to Track</strong> and, where the game offers it, in <span class="path">Settings → Privacy options</span>. You also have the right to know about and delete personal information, and you will not be treated differently for using your rights.</p>
 
-<h2 id="website">11. This website</h2>
+<h2 id="website">12. This website</h2>
 <p>This website uses no cookies, no analytics and no trackers, and loads nothing from other sites. It is hosted on GitHub Pages, and GitHub logs visitors' IP addresses for security purposes (see the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub Privacy Statement</a>). The Privacy Policy, Terms and Support links in the game open this website in Safari.</p>
 
-<h2 id="transfers">12. International transfers and security</h2>
-<p>Google, Apple and GitHub may process data in countries other than yours, including the United States, using the safeguards described in their privacy policies. On your device, your save is protected by iOS app sandboxing and your device's security.</p>
+<h2 id="transfers">13. International transfers and security</h2>
+<p>Google, Apple and GitHub may process data in countries other than yours, including the United States, using the safeguards described in their privacy policies.</p>
+<p>The friends data is stored in Frankfurt, Germany, in a Supabase data centre run on Amazon Web Services (region eu-central-1). It is in the European Union, not in Turkey, and it may be outside the country where you live. Supabase is a company based in the United States, and it and its sub-processors may also handle data in the United States and other countries, for example for support and to operate the service. Supabase's <a href="https://supabase.com/legal/customer-resources/data-processing-addendum">Data Processing Addendum</a> includes the European Commission's standard contractual clauses for such transfers. The connection between the game and the server is encrypted, and other players can read only what is listed under <a href="#friends-visibility">Who can see it</a>.</p>
+<p>On your device, your save is protected by iOS app sandboxing and your device's security.</p>
 
-<h2 id="changes">13. Changes to this policy</h2>
-<p>If our data practices change (for example, if we add a new ad partner), we will update this page and the effective date above. For significant changes we will also mention it in the app's update notes.</p>
+<h2 id="changes">14. Changes to this policy</h2>
+<p>If our data practices change (for example, if we add a new ad partner or change what the friends feature stores), we will update this page and the effective date above. For significant changes we will also mention it in the app's update notes.</p>
 
-<h2 id="contact">14. Contact</h2>
+<h2 id="contact">15. Contact</h2>
 <p>BEYDANUR DONMEZ<br>Email: <a class="email" href="mailto:fishburg.sandbox@outlook.com">fishburg.sandbox@outlook.com</a></p>
 </main>
 <footer class="site-footer">

@@ -19,6 +19,20 @@ CRUI's rule: use the seller name exactly as App Store Connect shows it, **BEYDAN
 ./fill-developer-name.sh "BEYDANUR DONMEZ" "Beydanur Dönmez"
 ```
 
+## Effective date placeholder (round 11, friends feature): fill on deploy day
+
+**Filled and deployed on 2026-10-13 (round 12): the four pages say 13 October 2026 / 13 Ekim 2026 and carry no placeholder. The text below is how it was done; for the next change of the legal text, edit the date in the four `<time>` lines by hand.**
+
+The four legal pages (`privacy/index.html`, `terms/index.html`, `tr/privacy/index.html`, `tr/terms/index.html`) carry the placeholders `EFFECTIVE_DATE_ISO` and `EFFECTIVE_DATE_TEXT` in the "Effective date" line under the page title (the pages that are live today say 2026-10-12). **Do not publish while they are there.** On the day you deploy, from this folder (example for 14 October 2026):
+
+```sh
+perl -pi -e 's/EFFECTIVE_DATE_ISO/2026-10-14/; s/EFFECTIVE_DATE_TEXT/14 October 2026/' privacy/index.html terms/index.html
+perl -pi -e 's/EFFECTIVE_DATE_ISO/2026-10-14/; s/EFFECTIVE_DATE_TEXT/14 Ekim 2026/' tr/privacy/index.html tr/terms/index.html
+grep -rn EFFECTIVE_DATE . --include='*.html'   # must print nothing
+```
+
+Before that deploy, check the friends texts against the build that ships (docs/STORE.md "App Privacy" §F lists the statements to check) and do the Supabase steps listed there (region, Data Processing Addendum).
+
 ## Files that are NOT part of the published site
 
 Don't copy these two files to the `fishburg-site` repo:
@@ -50,5 +64,5 @@ Don't copy these two files to the `fishburg-site` repo:
 
 - `404.html` uses absolute `/fishburg-site/...` links, because GitHub Pages serves it at any missing path. If the site ever moves to a custom domain or the repo is renamed, update those links.
 - `.nojekyll` tells GitHub Pages to serve the files as they are, without Jekyll processing.
-- The privacy policy states what Google AdMob collects, based on Google's current disclosure and the SDK privacy manifests. If you add an ad network, analytics, a server or cloud save, update the policy and the App Privacy answers in App Store Connect at the same time.
+- The privacy policy states what Google AdMob collects, based on Google's current disclosure and the SDK privacy manifests. Since round 11 it also states what the friends feature stores on Supabase. If you add an ad network, analytics, another server or cloud save, or change what the friends feature stores, update the policy and the App Privacy answers in App Store Connect at the same time.
 - Preview locally: run `python3 -m http.server 8000` in this folder, then open `http://localhost:8000/`. The 404 page's absolute links only work on GitHub Pages.
