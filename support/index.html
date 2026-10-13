@@ -90,11 +90,15 @@
 <h3>Notifications</h3>
 <details>
   <summary>How do the reminders work?</summary>
-  <p>Fishburg can remind you when a fish is hungry, when a fish is about to starve, when an egg has hatched, when the glass needs cleaning and when your Free Gift is ready. You get at most three reminders a day and none between 22:00 and 09:00. Reminders are created on your device by the game. The current version uses no push server.</p>
+  <p>Fishburg can remind you when a fish is hungry, when a fish is about to starve, when an egg has hatched, when the glass needs cleaning and when your Free Gift is ready. You get at most three reminders a day and none between 22:00 and 09:00. Reminders are created on your device by the game, and no server is involved. Notifications about friends work differently (see the next question).</p>
+</details>
+<details id="friend-notifications">
+  <summary>Do I get notifications about friends?</summary>
+  <p>Yes, if you have joined Friends and have already allowed notifications for Fishburg. You get one when you receive a friend request, when a friend request of yours is accepted, when someone likes your tank and when a friend cleans your glass. The game shows no extra permission prompt for this. These are push notifications: the game stores a push token for your device with your social account, and our server sends the text through Expo's push service and Apple's push service. The reminder limits (three a day, none at night) do not apply to them. The Inbox in Friends shows the same events either way. Details are in the <a href="../privacy/#notifications">Privacy Policy</a>.</p>
 </details>
 <details>
   <summary>How do I turn reminders on or off?</summary>
-  <p>Use the notification switches in the game's <span class="path">Settings</span> (one for all reminders and one for each kind), or go to <span class="path">iOS Settings → Notifications → Fishburg</span>. Your fish still get hungry with reminders off, so check in now and then or use Vacation Mode.</p>
+  <p>Use the notification switches in the game's <span class="path">Settings</span> (one for all reminders and one for each kind), or go to <span class="path">iOS Settings → Notifications → Fishburg</span>. Your fish still get hungry with reminders off, so check in now and then or use Vacation Mode. To stop notifications about friends, turn notifications off in <span class="path">iOS Settings → Notifications → Fishburg</span>; that turns the reminders off too.</p>
 </details>
 
 <h3 id="friends">Friends</h3>
@@ -104,7 +108,7 @@
 </details>
 <details id="friend-cleaning">
   <summary>What happens when a friend cleans my glass?</summary>
-  <p>Your glass becomes clean in your own game too, the next time your game is online. Your friend gets a small coin reward: once per friend per day, for at most ten cleanings a day. You get no coins for glass that a friend cleaned. You see who cleaned it in the Inbox in Friends; the current version sends no notifications about friends.</p>
+  <p>Your glass becomes clean in your own game too, the next time your game is online. Your friend gets a small coin reward: once per friend per day, for at most ten cleanings a day. You get no coins for glass that a friend cleaned. You see who cleaned it in the Inbox in Friends, and you get a notification about it if notifications are allowed for Fishburg.</p>
 </details>
 <details>
   <summary>How do I report a player?</summary>
@@ -116,7 +120,7 @@
 </details>
 <details id="delete-account">
   <summary>How do I delete my social account?</summary>
-  <p>In the game, open <span class="path">Settings → Delete social account</span>. The account and everything stored with it on the server (player ID, display name, level, the copy of your tanks, friends, likes, blocks and inbox) are removed at once. Your aquarium on your device is not touched. No new account is created afterwards. If you later open Friends and join again, you get a brand-new account with a new player ID.</p>
+  <p>In the game, open <span class="path">Settings → Delete social account</span>. The account and everything stored with it on the server (player ID, display name, level, the copy of your tanks, friends, likes, blocks, inbox and push tokens) are removed at once. Your aquarium on your device is not touched. No new account is created afterwards. If you later open Friends and join again, you get a brand-new account with a new player ID.</p>
 </details>
 <details>
   <summary>I no longer have the app. Can you delete my social account?</summary>

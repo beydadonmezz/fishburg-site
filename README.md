@@ -31,7 +31,22 @@ perl -pi -e 's/EFFECTIVE_DATE_ISO/2026-10-14/; s/EFFECTIVE_DATE_TEXT/14 Ekim 202
 grep -rn EFFECTIVE_DATE . --include='*.html'   # must print nothing
 ```
 
-Before that deploy, check the friends texts against the build that ships (docs/STORE.md "App Privacy" §F lists the statements to check) and do the Supabase steps listed there (region, Data Processing Addendum).
+Before that deploy, check the friends texts against the build that ships (docs/STORE.md "App Privacy" §F lists the statements to check) and do the Supabase steps listed there (region; the Data Processing Addendum needs no separate acceptance, owner's statement of 2026-10-13, STORE.md F.5 step 2).
+
+## Update the published site (after the first publish)
+
+Round 12b (2026-10-13): the privacy and support pages (en + tr) say that notifications about friends are sent as push notifications through Expo and Apple. **Deploy them only after the phone test of push has passed**, because they describe the build with push switched on. The effective date stays 13 October 2026 / 13 Ekim 2026.
+
+```sh
+git clone https://github.com/beydadonmezz/fishburg-site.git /Applications/Apps/fishburg-site-publish
+rsync -a --delete --exclude '.git' --exclude '.DS_Store' --exclude '_user-site-snippet.html' --exclude 'fill-developer-name.sh' /Applications/Apps/fishburg/site/ /Applications/Apps/fishburg-site-publish/
+git -C /Applications/Apps/fishburg-site-publish status --short
+git -C /Applications/Apps/fishburg-site-publish add -A
+git -C /Applications/Apps/fishburg-site-publish commit -m "site: notifications about friends are push notifications (Expo, Apple)"
+git -C /Applications/Apps/fishburg-site-publish push origin main
+```
+
+`status --short` should list only the files that changed (round 12b: `privacy/index.html`, `support/index.html`, `tr/privacy/index.html`, `tr/support/index.html`, `README.md`). If it lists a deletion you did not expect, stop and look before `add`. If the folder `fishburg-site-publish` already exists, use `git -C /Applications/Apps/fishburg-site-publish pull` in place of the clone. GitHub Pages rebuilds in a minute or two; then check that `/fishburg-site/privacy/#notifications` and `/fishburg-site/tr/privacy/#notifications` show the new text.
 
 ## Files that are NOT part of the published site
 
@@ -64,5 +79,5 @@ Don't copy these two files to the `fishburg-site` repo:
 
 - `404.html` uses absolute `/fishburg-site/...` links, because GitHub Pages serves it at any missing path. If the site ever moves to a custom domain or the repo is renamed, update those links.
 - `.nojekyll` tells GitHub Pages to serve the files as they are, without Jekyll processing.
-- The privacy policy states what Google AdMob collects, based on Google's current disclosure and the SDK privacy manifests. Since round 11 it also states what the friends feature stores on Supabase. If you add an ad network, analytics, another server or cloud save, or change what the friends feature stores, update the policy and the App Privacy answers in App Store Connect at the same time.
+- The privacy policy states what Google AdMob collects, based on Google's current disclosure and the SDK privacy manifests. Since round 11 it also states what the friends feature stores on Supabase, and since round 12b that notifications about friends go through Expo's push service to Apple. If you add an ad network, analytics, another server or cloud save, or change what the friends feature stores, update the policy and the App Privacy answers in App Store Connect at the same time.
 - Preview locally: run `python3 -m http.server 8000` in this folder, then open `http://localhost:8000/`. The 404 page's absolute links only work on GitHub Pages.
