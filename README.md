@@ -35,6 +35,8 @@ Before that deploy, check the friends texts against the build that ships (docs/S
 
 ## Update the published site (after the first publish)
 
+Round 13 (2026-10-14): the privacy and support pages (en + tr) state the server rules for notifications about friends (quiet hours, grouping, three a day, 12 h), the in-game Notifications switch and the stored time zone; the privacy pages' effective date is 14 October 2026 / 14 Ekim 2026 (the terms stay 13 October). `src/i18n/__tests__/site-facts.test.ts` ties those numbers to `supabase/migrations/20261014000100_social_push_rules.sql`.
+
 Round 12b (2026-10-13): the privacy and support pages (en + tr) say that notifications about friends are sent as push notifications through Expo and Apple. **Deploy them only after the phone test of push has passed**, because they describe the build with push switched on. The effective date stays 13 October 2026 / 13 Ekim 2026.
 
 ```sh
