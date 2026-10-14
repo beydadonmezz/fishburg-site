@@ -30,7 +30,7 @@
 </header>
 <main id="main" class="wrap">
 <h1>Privacy Policy</h1>
-<p class="meta">Fishburg: Aquarium · Effective date: <time datetime="2026-10-14">14 October 2026</time></p>
+<p class="meta">Fishburg: Aquarium · Effective date: <time datetime="2026-10-15">15 October 2026</time></p>
 
 <div class="card summary">
   <h2>The short version</h2>
@@ -38,7 +38,7 @@
     <li>Fishburg has <strong>no sign-up</strong>: no email, no password, no name. Your save game is stored <strong>on your device</strong>, and deleting the app deletes it.</li>
     <li>For the <strong>friends feature</strong>, the game creates an anonymous account with a random player ID and a generated display name when it first starts. More is stored on our server (your level, a copy of how your tanks look, friends, likes, blocks and reports) only after you join Friends and accept its rules.</li>
     <li>You can <strong>delete the social account</strong> at any time in the game's Settings. We don't use this data for ads and we don't sell it.</li>
-    <li>Ads are provided by <strong>Google AdMob</strong>. Google collects some device and usage data to show ads, measure them and prevent fraud. You decide whether ads may be personalized.</li>
+    <li>Ads are provided by <strong>Google AdMob</strong>. They are <strong>personalised only if you agree</strong> (in Apple's tracking prompt and, in the EEA, the UK and Switzerland, also in the consent form); otherwise you get non-personalised ads. Either way, Google collects some device and usage data to show ads, measure them and prevent fraud.</li>
     <li>Purchases and Game Center are handled by <strong>Apple</strong>. We never see your payment details.</li>
     <li>The game works fully whatever you choose in any privacy prompt.</li>
   </ul>
@@ -111,7 +111,7 @@
       <tr><td>Inbox</td><td>The last 100 events for you: a friend request arrived or was accepted, someone liked your tank or cleaned your glass</td></tr>
       <tr><td>Daily counters</td><td>How many friend requests, likes, rewarded glass cleanings, reports and name changes you made today, so that the server can apply its daily limits. A day is counted in UTC, and the counters are deleted after 7 days.</td></tr>
       <tr><td>Rules accepted</td><td>The date you accepted the Friends rules</td></tr>
-      <tr><td>Push notification token</td><td>Only if the Notifications switch in the game's Settings is on and you have already allowed notifications for Fishburg in iOS: a push token for your device (an Expo push token, which the game gets from Apple's push service through Expo), at most 5 device tokens per account. We use it to send you the notifications about friends described under <a href="#notifications">Notifications</a>. A token is removed when you switch Notifications off in the game on that device, when Apple or Expo reports that the device is no longer registered, and with the account.</td></tr>
+      <tr><td>Push notification token</td><td>Only if the Notifications switch in the game's Settings is on and you have already allowed notifications for Fishburg in iOS: a push token for your device (an Expo push token, which the game gets from Apple's push service through Expo), at most 5 device tokens per account. To issue the token, Expo receives your device's Apple push token and a random installation ID that Expo's notification library creates for Fishburg on your device; we do not store that installation ID. We use it to send you the notifications about friends described under <a href="#notifications">Notifications</a>. A token is removed when you switch Notifications off in the game on that device, when Apple or Expo reports that the device is no longer registered, and with the account.</td></tr>
       <tr><td>Notifications sent</td><td>When each notification about friends was sent to you and how many events it covered, so that the server can keep the gap between notifications and the daily limit</td></tr>
     </tbody>
   </table>
@@ -147,38 +147,52 @@
 <p>You can report a player whose player ID you have (a friend, or someone who sent you a friend request) from inside the game, once per player per day, and you can block players. We review reports ourselves. We remove offensive names and delete the accounts of abusive players, and we aim to act within 24 hours of a report. The rules are in the <a href="../terms/#friends">Terms of Use</a>.</p>
 
 <h2 id="ads">4. Ads by Google AdMob</h2>
-<p>Fishburg is free to play and is funded by ads from Google AdMob. You see <strong>rewarded ads</strong> only when you choose to watch one (for example, to revive a fish or to collect the Free Gift), and occasionally a full-screen ad when a level-up message closes. There are no banner ads. We have limited ads in Fishburg to Google's <strong>PG</strong> (parental guidance) content rating or below.</p>
-<p>To show ads, Google's Mobile Ads SDK in the app collects the following, according to <a href="https://developers.google.com/admob/ios/privacy/data-disclosure">Google's own disclosure</a>:</p>
+<p>Fishburg is free to play and is funded by ads. Fishburg shows ads from Google AdMob (the Google Mobile Ads SDK): rewarded videos that you choose to watch (for example, to revive a fish or to collect the Free Gift), and an occasional full-screen ad after a level-up. There are no banner ads. Ads in Fishburg are limited to content rated <strong>PG</strong> (Google's "parental guidance" rating). Fishburg is not directed at children.</p>
+<p>When you first open Fishburg, Google's consent tool asks for your choices: in the EEA, the UK and Switzerland, a consent form; everywhere, Apple's App Tracking Transparency prompt (after a short explanation). Ads are loaded only after this step. The details are under <a href="#choices">Your privacy choices</a>.</p>
+
+<h3 id="ads-personalised">Personalised ads, only if you agreed</h3>
+<p>You get personalised ads only if you agreed: you chose "Allow" in Apple's tracking prompt and, if you are in the EEA, the UK or Switzerland, you also agreed to personalised ads in the consent form.</p>
+<p>With personalised ads, Google may use your device's advertising identifier (IDFA) and information about the ads you see and how you use the app to show ads based on your interests and to measure them, also across other companies' apps and websites. Apple calls this "tracking", which is why we ask first.</p>
+
+<h3 id="ads-non-personalised">Non-personalised ads in every other case</h3>
+<p>In every other case (you chose "Ask App Not to Track", you have not answered, tracking is restricted on your device, or you refused personalised ads in the consent form), Fishburg asks Google for non-personalised ads only.</p>
+<p>Non-personalised ads are not based on your past behaviour, but Google still uses some data to deliver them: your IP address for approximate (city-level) location and to prevent fraud and invalid activity; device or app-specific identifiers to limit how often you see the same ad and for aggregated ad reporting; the ads shown to you and your taps on them; and crash and performance data. Without your permission in the tracking prompt, iOS does not give the advertising identifier to Fishburg or Google.</p>
+<p>In the EEA, the UK and Switzerland, if you do not consent, Google may show "limited ads" that use no data for personalisation.</p>
+<p><strong>Fishburg never reads your advertising identifier itself and never gives Google your Fishburg account or player ID.</strong></p>
+
+<h3 id="ads-data">What the ads SDK collects</h3>
+<p>According to <a href="https://developers.google.com/admob/ios/privacy/data-disclosure">Google's own disclosure</a>, Google's Mobile Ads SDK in the app collects the following. The table says where personalised and non-personalised ads differ.</p>
 <div class="table-scroll">
   <table>
     <thead>
       <tr><th scope="col">Data</th><th scope="col">Examples</th><th scope="col">Used for</th></tr>
     </thead>
     <tbody>
-      <tr><td>Device identifiers</td><td>Your device's advertising identifier (IDFA), <strong>only if you allow tracking</strong>; otherwise identifiers limited to this app or developer</td><td>Showing and measuring ads, frequency capping, analytics</td></tr>
-      <tr><td>Approximate location</td><td>Estimated from your IP address (city or region level, never GPS)</td><td>Showing ads suitable for your region, analytics</td></tr>
-      <tr><td>Advertising data</td><td>Which ads you have seen</td><td>Advertising and ad analytics</td></tr>
-      <tr><td>Product interaction</td><td>App launches, taps, ad video views</td><td>Improving ad performance, analytics</td></tr>
-      <tr><td>Diagnostics</td><td>Crash logs and performance data such as launch time or hang rate</td><td>Fixing and improving the ads SDK, analytics</td></tr>
+      <tr><td>Device identifiers</td><td>Your device's advertising identifier (IDFA), <strong>only if you chose "Allow" in the tracking prompt</strong>; otherwise identifiers limited to this app or developer</td><td>Showing and measuring ads, limiting how often you see the same ad, aggregated reporting and analytics; with personalised ads also ads based on your interests</td></tr>
+      <tr><td>Approximate location</td><td>Estimated from your IP address (city or region level, never GPS)</td><td>Showing ads suitable for your region, preventing fraud and invalid activity, analytics</td></tr>
+      <tr><td>Advertising data</td><td>Which ads you have seen</td><td>Delivering and measuring ads, limiting how often you see the same ad, ad reporting</td></tr>
+      <tr><td>Product interaction</td><td>App launches, taps, ad video views</td><td>Delivering ads and improving their performance, analytics</td></tr>
+      <tr><td>Diagnostics</td><td>Crash logs, performance data such as launch time or hang rate, and other diagnostic data</td><td>Fixing and improving the ads SDK, advertising and analytics</td></tr>
     </tbody>
   </table>
 </div>
 <p>Google's consent tool (the User Messaging Platform) also uses your approximate location and basic device data to decide which privacy messages apply where you live, and it stores your choices on your device.</p>
-<p>This data goes directly to Google, not to us. We only see anonymous, combined reports (for example, how many ads were shown). We only work with partners that protect user data at least as well as this policy describes. Google uses the data as described in the <a href="https://policies.google.com/privacy">Google Privacy Policy</a> and in <a href="https://policies.google.com/technologies/partner-sites">How Google uses information from sites or apps that use its services</a>.</p>
+<p>Fishburg's privacy label on the App Store lists the device ID as "used to track you", because it is used for personalised ads when you allow it. It lists the other ad data above as "linked to you", except crash logs and other diagnostic data, because Google can connect it to your device's identifiers. It also names "Developer's Advertising or Marketing" as a purpose, because Google declares that purpose for its SDK; we run no advertising or marketing of our own.</p>
+<p>This data goes directly to Google, not to us. We only see anonymous, combined reports (for example, how many ads were shown). We only work with partners that protect user data at least as well as this policy describes. How Google uses this data: <a href="https://policies.google.com/technologies/partner-sites">https://policies.google.com/technologies/partner-sites</a> and Google's Privacy Policy <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a>.</p>
 
 <h2 id="choices">5. Your privacy choices</h2>
-<p>Before any ad loads, Google's consent flow shows the privacy messages that apply to you:</p>
+<p>Before any ad loads, Google's consent tool shows the privacy messages that apply to you:</p>
 <ul>
-  <li><strong>Consent form (EEA, UK and Switzerland).</strong> You can agree to or refuse personalized ads and the use of your device's storage and identifiers. The form has a "Do not consent" button. If you don't give consent, ads are <strong>not personalized</strong>: Google shows non-personalized or "limited" ads that don't use your past activity.</li>
-  <li><strong>Tracking permission.</strong> Google shows a short message explaining why we ask, and then Apple's App Tracking Transparency prompt asks whether Fishburg may track your activity across other companies' apps and websites. If you choose <strong>Ask App Not to Track</strong>, your advertising identifier (IDFA) is not shared.</li>
+  <li><strong>Consent form (EEA, UK and Switzerland).</strong> You can agree to or refuse personalised ads and the use of your device's storage and identifiers. The form has a "Do not consent" button. If you refuse personalised ads, Fishburg asks Google for non-personalised ads only; if you do not consent, Google may show "limited ads" that use no data for personalisation.</li>
+  <li><strong>Tracking prompt (everywhere).</strong> Google first shows a short message explaining why we ask (in the EEA, the UK and Switzerland, the consent form can take its place), and then Apple's App Tracking Transparency prompt asks whether Fishburg may track your activity across other companies' apps and websites. If you choose <strong>Allow</strong>, ads can be personalised (in the EEA, the UK and Switzerland only if you also agreed in the consent form). If you choose <strong>Ask App Not to Track</strong>, iOS does not give your advertising identifier (IDFA) to Fishburg or Google, and Fishburg asks for non-personalised ads only.</li>
 </ul>
-<p>You can change your choices at any time:</p>
+<p>You can change your choice at any time:</p>
 <ul>
-  <li>Ad consent: in the game, <span class="path">Settings → Privacy options</span> (shown wherever a consent choice applies).</li>
-  <li>Tracking: <span class="path">iOS Settings → Privacy &amp; Security → Tracking</span>. <a href="https://support.apple.com/en-us/102420">More about tracking permission from Apple</a>.</li>
-  <li>Google ad personalization in general: <a href="https://myadcenter.google.com/">My Ad Center</a>.</li>
+  <li>Tracking: <span class="path">iPhone Settings → Privacy &amp; Security → Tracking → Fishburg</span> (on iPad, the same path in iPad Settings). Fishburg checks your tracking choice each time you return to the game, and the next ad follows it. <a href="https://support.apple.com/en-us/102420">More about tracking permission from Apple</a>.</li>
+  <li>Ad consent, in the EEA, the UK and Switzerland: also <span class="path">Fishburg → Settings → Privacy options</span>, which opens the consent form again.</li>
+  <li>Google ad personalisation in general: <a href="https://myadcenter.google.com/">My Ad Center</a>.</li>
 </ul>
-<p>Saying no never limits the game. You can still play everything and still choose to watch rewarded ads.</p>
+<p>The game works the same whatever you choose, and no reward depends on it. You can still play everything and still choose to watch rewarded ads.</p>
 
 <h2 id="purchases">6. In-app purchases</h2>
 <p>Purchases (gem packs, coin packs, the Starter Pack and Remove Ads) are processed entirely by Apple through your Apple Account. We never receive your name, email, card or other payment details. Apple only tells the app that a purchase succeeded, with a transaction number, so the game can apply it on your device. Apple handles this data under the <a href="https://www.apple.com/legal/privacy/">Apple Privacy Policy</a>. Refunds are handled by Apple. See the <a href="../terms/#purchases">Terms of Use</a> for what each purchase includes.</p>
@@ -200,7 +214,7 @@
 <p>To stop notifications about friends on a device, switch off <strong>Notifications</strong> in the game's Settings (the switch for all reminders; the switches for single kinds of reminder do not affect them). The game then removes that device's push token from our server (if the device is offline, as soon as it is online again), and registers it again when you switch Notifications back on. Turning notifications off in <span class="path">iOS Settings → Notifications → Fishburg</span> also stops them, together with the reminders. Deleting your social account deletes all push tokens.</p>
 
 <h2 id="children">9. Children and age rating</h2>
-<p>Fishburg is rated <strong>9+</strong> on the App Store and is not in the Kids category. It is a general-audience game, <strong>not directed at children under 13</strong>, and we do not ask for anyone's age. The friends feature has no chat, no messages and no photos: the only text players can see from each other is a display name, which passes a filter for offensive words, and the social account holds no name, email address or other contact details. If you are a parent and want your child's social account removed, use <span class="path">Settings → Delete social account</span> in the game or email us with the player ID. Ads are limited to Google's PG content rating, they are not personalized when consent is not given, and the tracking identifier is only used if the user allows it. If you are a parent and have a question, please contact us.</p>
+<p>Fishburg is rated <strong>9+</strong> on the App Store and is not in the Kids category. It is a general-audience game, <strong>not directed at children under 13</strong>, and we do not ask for anyone's age. The friends feature has no chat, no messages and no photos: the only text players can see from each other is a display name, which passes a filter for offensive words, and the social account holds no name, email address or other contact details. If you are a parent and want your child's social account removed, use <span class="path">Settings → Delete social account</span> in the game or email us with the player ID. Ads are limited to content rated PG, and they are personalised only if the user chose "Allow" in Apple's tracking prompt (and, in the EEA, the UK and Switzerland, also agreed in the consent form); in every other case they are non-personalised (see <a href="#ads">Ads by Google AdMob</a>). If you are a parent and have a question, please contact us.</p>
 
 <h2 id="retention">10. Keeping and deleting data</h2>
 <ul>
@@ -216,15 +230,15 @@
 <h3>Turkey (KVKK)</h3>
 <p>Under Law No. 6698 on the Protection of Personal Data, you can learn whether your data is processed, ask for information about it and its purpose, learn which third parties it is transferred to in Turkey or abroad, ask for correction or deletion, object to results based solely on automated processing, and claim compensation for unlawful processing. We process the friends data because it is needed to provide a feature you asked for and, for the anonymous account and for moderation, on the basis of our legitimate interest in running the feature safely. You can apply to us first and then complain to the Personal Data Protection Board. A <a href="../tr/privacy/">Turkish version of this policy</a> is available.</p>
 <h3>EEA and UK (GDPR)</h3>
-<p>You can ask to access, correct or delete your data, restrict or object to its use, and receive it in a portable format. Where we rely on consent (for example, for personalized ads), you can withdraw it at any time without affecting earlier use. Otherwise ads rely on our legitimate interest in funding a free game, limited to non-personalized ads, fraud prevention and security. The friends data is processed to provide the feature you joined (performance of a contract); creating the anonymous account and reviewing reports rely on our legitimate interest in running the feature and keeping it safe. You can also complain to your local data protection authority.</p>
+<p>You can ask to access, correct or delete your data, restrict or object to its use, and receive it in a portable format. Where we rely on consent (for example, for personalised ads), you can withdraw it at any time without affecting earlier use. Otherwise ads rely on our legitimate interest in funding a free game, limited to non-personalised or limited ads, fraud prevention and security. The friends data is processed to provide the feature you joined (performance of a contract); creating the anonymous account and reviewing reports rely on our legitimate interest in running the feature and keeping it safe. You can also complain to your local data protection authority.</p>
 <h3>California (CCPA/CPRA)</h3>
-<p>We do not sell personal information for money, and we neither sell nor share the friends data. Where the use of your advertising identifier for personalized ads counts as "sharing" under California law, you can opt out by choosing <strong>Ask App Not to Track</strong> and, where the game offers it, in <span class="path">Settings → Privacy options</span>. You also have the right to know about and delete personal information, and you will not be treated differently for using your rights.</p>
+<p>We do not sell personal information for money, and we neither sell nor share the friends data. Where the use of your advertising identifier for personalised ads counts as "sharing" under California law, you can opt out by choosing <strong>Ask App Not to Track</strong> (Fishburg then asks Google for non-personalised ads only) and, where the game offers it, in <span class="path">Settings → Privacy options</span>. You also have the right to know about and delete personal information, and you will not be treated differently for using your rights.</p>
 
 <h2 id="website">12. This website</h2>
 <p>This website uses no cookies, no analytics and no trackers, and loads nothing from other sites. It is hosted on GitHub Pages, and GitHub logs visitors' IP addresses for security purposes (see the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub Privacy Statement</a>). The Privacy Policy, Terms and Support links in the game open this website in Safari.</p>
 
 <h2 id="transfers">13. International transfers and security</h2>
-<p>Google, Apple and GitHub may process data in countries other than yours, including the United States, using the safeguards described in their privacy policies. Expo (650 Industries, Inc.) is a company in the United States: for notifications about friends it receives your device's push token and the notification text (with another player's display name, or only a number of updates) and passes them on to Apple, under the <a href="https://expo.dev/privacy">Expo Privacy Policy</a>.</p>
+<p>Google, Apple and GitHub may process data in countries other than yours, including the United States, using the safeguards described in their privacy policies. Expo (650 Industries, Inc.) is a company in the United States: for notifications about friends it receives your device's push token, the random installation ID described under <a href="#friends-data">Stored after you join Friends</a> and the notification text (with another player's display name, or only a number of updates) and passes them on to Apple, under the <a href="https://expo.dev/privacy">Expo Privacy Policy</a>.</p>
 <p>The friends data is stored in Frankfurt, Germany, in a Supabase data centre run on Amazon Web Services (region eu-central-1). It is in the European Union, not in Turkey, and it may be outside the country where you live. Supabase is a company based in the United States, and it and its sub-processors may also handle data in the United States and other countries, for example for support and to operate the service. Supabase's <a href="https://supabase.com/legal/customer-resources/data-processing-addendum">Data Processing Addendum</a> includes the European Commission's standard contractual clauses for such transfers. The connection between the game and the server is encrypted, and other players can read only what is listed under <a href="#friends-visibility">Who can see it</a>.</p>
 <p>On your device, your save is protected by iOS app sandboxing and your device's security.</p>
 

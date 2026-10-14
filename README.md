@@ -35,6 +35,8 @@ Before that deploy, check the friends texts against the build that ships (docs/S
 
 ## Update the published site (after the first publish)
 
+Round 14 (2026-10-14, **not deployed yet**): the privacy pages (en + tr) say that ads are personalised only with consent (ATT "Allow" and, in the EEA/UK/CH, the consent form), non-personalised otherwise, what Google still uses for non-personalised ads, and how to change the choice (`#choices` kept); the support pages' ads answer and the home pages' ad sentence follow. Privacy effective date 15 October 2026 / 15 Ekim 2026. Deploy together with the cloud-save change that follows, with that one date, and only when the round 14 build is the one in review or on sale (docs/STORE.md F.7 "Site, round 14").
+
 Round 13 (2026-10-14): the privacy and support pages (en + tr) state the server rules for notifications about friends (quiet hours, grouping, three a day, 12 h), the in-game Notifications switch and the stored time zone; the privacy pages' effective date is 14 October 2026 / 14 Ekim 2026 (the terms stay 13 October). `src/i18n/__tests__/site-facts.test.ts` ties those numbers to `supabase/migrations/20261014000100_social_push_rules.sql`.
 
 Round 12b (2026-10-13): the privacy and support pages (en + tr) say that notifications about friends are sent as push notifications through Expo and Apple. **Deploy them only after the phone test of push has passed**, because they describe the build with push switched on. The effective date stays 13 October 2026 / 13 Ekim 2026.
