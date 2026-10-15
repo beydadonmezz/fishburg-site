@@ -1,6 +1,6 @@
 # fishburg-site
 
-Public website for **Fishburg** (the game; its App Store name is **"Fishburg: Aquarium"**): home page, Privacy Policy, Terms of Use and Support, in English and Turkish. Plain static HTML plus one CSS file. There is no build step, no JavaScript, no cookies, no trackers and no external requests; each page sets a strict Content-Security-Policy.
+Public website for **Fishburg** (the game; its App Store and Google Play name is **"Fishburg: Aquarium"**): home page, Privacy Policy, Terms of Use, Support and the account deletion page, in English and Turkish. Plain static HTML plus one CSS file. There is no build step, no JavaScript, no cookies, no trackers and no external requests; each page sets a strict Content-Security-Policy.
 
 Live URL (after publishing): `https://beydadonmezz.github.io/fishburg-site/`
 
@@ -10,6 +10,7 @@ Live URL (after publishing): `https://beydadonmezz.github.io/fishburg-site/`
 | Privacy Policy | `/privacy/` (Privacy Choices: `/privacy/#choices`) | `/tr/privacy/` |
 | Terms of Use | `/terms/` | `/tr/terms/` |
 | Support | `/support/` | `/tr/support/` |
+| Delete your account (Google Play "Delete account URL") | `/delete-account/` | `/tr/delete-account/` |
 
 ## Developer name (filled 2026-09-28)
 
@@ -34,6 +35,8 @@ grep -rn EFFECTIVE_DATE . --include='*.html'   # must print nothing
 Before that deploy, check the friends texts against the build that ships (docs/STORE.md "App Privacy" §F lists the statements to check) and do the Supabase steps listed there (region; the Data Processing Addendum needs no separate acceptance, owner's statement of 2026-10-13, STORE.md F.5 step 2).
 
 ## Update the published site (after the first publish)
+
+Round A1 (2026-10-15, Android / Google Play closed test): every iOS statement stays; the Android facts are added next to them. Privacy (en + tr): push on Android through Google Firebase Cloud Messaging (FCM token, Firebase installation ID; Analytics and Crashlytics off), ads on Android (no ATT; personalised only in the EEA/UK/CH with consent; Android advertising ID and app set ID; reset/delete path), Google Play Billing (purchase token kept on the device, left out of the cloud copy), the recovery key in the app's files plus Android backup (`#recovery-android`), no Game Center on Android (Awards), `#choices-android`. Support: Android paths (notifications and channels, ad choices, Restore Purchases, new phone, refunds, Awards). Terms: App Store or Google Play (EULA / Play terms, devices, Apple or Google processes purchases, refunds, section 11 "Apple and Google"). Home: iPhone, iPad and Android. New page `/delete-account/` + `/tr/delete-account/` (in-app steps, email without the app within 30 days, what is deleted, what is kept, purchases), linked from privacy, support and every footer (also 404). Effective date of privacy and terms stays 15 October 2026 (the day of this change).
 
 Round 14 (2026-10-14/15, deployed in one step): (1) the privacy pages (en + tr) say that ads are personalised only with consent (ATT "Allow" and, in the EEA/UK/CH, the consent form), non-personalised otherwise, what Google still uses for non-personalised ads, and how to change the choice (`#choices` kept); the support pages' ads answer and the home pages' ad sentence follow. (2) The cloud save and the recovery sign-in: privacy §2 `#cloud-save` and `#recovery` (what is copied, when, who can read it, how long, Purchase History, the Keychain secret, the `.invalid` sign-in address), the friends, deletion, retention, rights and transfer paragraphs, support (`#progress`, new `#start-over`, Restore Purchases, deleting the account), terms (summary, §4, §7, §9, §10) and the home pages. Effective date 15 October 2026 / 15 Ekim 2026 for privacy and terms (docs/STORE.md F.7 "Site, round 14", F.8).
 
@@ -83,5 +86,5 @@ Don't copy these two files to the `fishburg-site` repo:
 
 - `404.html` uses absolute `/fishburg-site/...` links, because GitHub Pages serves it at any missing path. If the site ever moves to a custom domain or the repo is renamed, update those links.
 - `.nojekyll` tells GitHub Pages to serve the files as they are, without Jekyll processing.
-- The privacy policy states what Google AdMob collects, based on Google's current disclosure and the SDK privacy manifests. Since round 11 it also states what the friends feature stores on Supabase, and since round 12b that notifications about friends go through Expo's push service to Apple. If you add an ad network, analytics, another server or cloud save, or change what the friends feature stores, update the policy and the App Privacy answers in App Store Connect at the same time.
+- The privacy policy states what Google AdMob collects, based on Google's current disclosures (iOS and Android) and the SDK privacy manifests. Since round A1 it also covers the Android version (Firebase Cloud Messaging for push, Google Play Billing, Android backup). Since round 11 it also states what the friends feature stores on Supabase, and since round 12b that notifications about friends go through Expo's push service to Apple. If you add an ad network, analytics, another server or cloud save, or change what the friends feature stores, update the policy and the App Privacy answers in App Store Connect at the same time.
 - Preview locally: run `python3 -m http.server 8000` in this folder, then open `http://localhost:8000/`. The 404 page's absolute links only work on GitHub Pages.
